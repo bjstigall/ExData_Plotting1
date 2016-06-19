@@ -8,7 +8,7 @@ hhp <- subset(allData, Date >= "2007-02-01" & Date <= "2007-02-02")
 datetime <- paste(as.Date(hhp$Date), hhp$Time) 
 hhp$Datetime <- as.POSIXct(datetime) 
 
-png("plot2.png")
+png("plot2.png", width = 480, height = 480)
 with(hhp, plot(hhp$Global_active_power~hhp$Datetime, type="l", 
      ylab="Global Active Power (kilowatts)", xlab="") )
 dev.off()

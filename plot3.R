@@ -8,7 +8,7 @@ hhp <- subset(allData, Date >= "2007-02-01" & Date <= "2007-02-02")
 datetime <- paste(as.Date(hhp$Date), hhp$Time) 
 hhp$Datetime <- as.POSIXct(datetime) 
 
-png("plot3.png")
+png("plot3.png", width = 480, height = 480)
 
 with(hhp, plot(Sub_metering_1~Datetime, type="l", ylab="Energy sub metering", xlab=""))
 with(hhp, lines(Sub_metering_2~Datetime,col='Red'))
